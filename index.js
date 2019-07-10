@@ -4,7 +4,7 @@ const provok = require("./provok.json");
 const answ = require("./answ.json");
 const Vec3 = require('tera-vec3');
 
-module.exports = function replacer(dispatch) {    
+module.exports = function slave(dispatch) {    
     let idk = true,
     gameId,
 	randomprovok,
@@ -13,14 +13,14 @@ module.exports = function replacer(dispatch) {
     huntingZoneId = 212,
 	altId = 1406,
 	altTemp = 72,
-	altName = "Little Slave",
+	altName = "Alt Slave",
 	petId = 0,
 	provoleng = 29,  //jsons length
 	free = false, //free
 	erand = 0,
 	npcmover = false,
 	ishapeId = 500384,
-	petName = 'Enslaved Beauty',
+	petName = 'Slave',
 	int1 = 0,
 	int2 = 0,
 	npcactdist = 0,
@@ -55,10 +55,10 @@ command.add('slave', {
 'free': () => {
 if (free == true)
 {
-sendbubgen(myId, "Honey, you may come back now.");
+sendbubgen(myId, "You may come back now.");
 setTimeout(() => { 
 free = false;
-sendbub("Are you feeling lonely, Master...?");
+sendbub("Be right back!");
 }, 2000);
 }
 
@@ -462,7 +462,7 @@ function emohp () {
         message: messages[intfn]
         });
 		*/
-		sendbub("Oh my God, you are dying, Master! Stop dying!");
+		sendbub("Oh my God, you are dying! Stop dying!");
 		doEmote(petId, intfn);
         }	
 //ender = setTimeout(emohp(), 60000);
