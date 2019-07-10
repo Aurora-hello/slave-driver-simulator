@@ -379,17 +379,6 @@ petloc = npcloc;
 return
 }
 
-
-	function DeltaAngle(x,y) { return Math.atan2(Math.sin(x-y), Math.cos(x-y)); }
-	
-	function sub_degrees(a,b)
-	{
-		let res = a-b;
-		while(res <= -180) res = 360 + res;
-		while(res > 180) res = res - 360;
-		return res;
-	}
-	
 	function radians_to_degrees(radians)
 	{
 	  return radians * (180/Math.PI);
@@ -401,20 +390,6 @@ function degrees_to_radians(degrees)
   return degrees * (pi/180);
 }
 	
-	function calc_pos(loc, w, degrees, radius)
-	{
-		let r = null, rads = null, finalrad = null, pos = {};
-		r = w - Math.PI;
-		rads = (degrees * Math.PI/180);
-		finalrad = r - rads;
-		pos.x = loc.x + radius * Math.cos(finalrad);
-		pos.y = loc.y + radius * Math.sin(finalrad);
-		pos.z = loc.z;
-		return pos;
-	}
-
-
-
 function aniconv (planim) {
 //func
 if (planim == 16 || planim == 17 || planim == 52 || planim == 43) {
